@@ -1,21 +1,33 @@
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class playerMovment : MonoBehaviour
 {
+    [Range(0, 10)]
+    public float speed;
+    public float startingTime; 
     private Vector2 movement;
-    void Start()
+
+    private void Start()
     {
-        
+        Timer.time = startingTime;
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
-        transform.position += (Vector3)movement * Time.deltaTime;
+        if (Timer.time <= 0)
+        {
+            Timer.time = 0;
+            return;
+        }
+        transform.position += (Vector3)movement * speed * Time.deltaTime;
+        Timer.time -= movement.magnitude * Time.deltaTime;
     }
 
     public void OnMove(InputValue value)
     {
         movement = value.Get<Vector2>();
     }
+
+
 }
