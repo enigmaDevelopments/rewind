@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,11 +6,6 @@ public class playerMovment : MonoBehaviour
 {
     private Vector2 movement;
     void Start()
-    {
-        
-    }
-
-    void Update()
     {
         
     }
