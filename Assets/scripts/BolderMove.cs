@@ -7,10 +7,14 @@ public class BolderMove : MonoBehaviour
     public float velocity;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float distence = velocity * Timer.deltaTime;
+        float distence = velocity * Timer.fixedDeltaTime;
         rb.MovePosition(rb.position + Vector2.right * distence);
         bolder.Rotate(0, 0, distence * -360 / Mathf.PI);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        velocity *= -1;
     }
 }
