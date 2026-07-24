@@ -77,6 +77,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c57adafd21d80c4ba694061666821f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sway
-  swayAmount: 7.5
-  swaySpeed: 0.8
-  offset: 0
+  swayAmount: 6
+  swaySpeed: 0.7

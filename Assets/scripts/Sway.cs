@@ -5,7 +5,7 @@ public class Sway : MonoBehaviour
 {
     public float swayAmount;
     public float swaySpeed;
-    public float offset;
+    private float offset;
     void Start()
     {
         offset = Random.Range(0f, 100f);
