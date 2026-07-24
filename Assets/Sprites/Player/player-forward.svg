@@ -3,14 +3,14 @@
 
 <svg
    width="100mm"
-   height="199.99951mm"
-   viewBox="0 0 100 199.99951"
+   height="198.11897mm"
+   viewBox="0 0 100 198.11897"
    version="1.1"
    id="svg1"
-   inkscape:export-filename="..\player\player-side.svg"
+   inkscape:export-filename="player-forward.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
-   sodipodi:docname="player-side.svg"
+   sodipodi:docname="side.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -47,22 +47,23 @@
   </metadata>
   <rect
      style="fill:#9d8575;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
-     id="rect6-0"
+     id="rect6-0-1"
      width="15.173752"
      height="48.998512"
-     x="28.922697"
-     y="151.00101"
+     x="59.707184"
+     y="149.12047"
      ry="7.6540179"
      inkscape:label="leg" />
   <rect
      style="fill:#9d8575;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
-     id="rect6-0-1"
+     id="rect9"
      width="15.173752"
      height="48.998512"
-     x="60.236351"
-     y="151.00101"
+     x="-40.292809"
+     y="149.12047"
      ry="7.6540179"
-     inkscape:label="leg" />
+     inkscape:label="leg"
+     transform="scale(-1,1)" />
   <rect
      style="fill:#ffd8be;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
      id="rect2"
@@ -72,11 +73,10 @@
      y="43.684265"
      inkscape:label="neck" />
   <path
-     id="path1"
-     style="fill:#ffd8be;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+     id="path2"
+     style="fill:#ffd8be;fill-opacity:1;fill-rule:evenodd;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
      inkscape:label="head"
-     d="m 62.589973,14.35933 c -18.659197,0 -25.674369,2.270853 -34.154504,16.928683 3.389953,8.975244 11.971025,14.924069 21.565092,14.949992 12.768114,-1.82e-4 23.118589,-10.350889 23.118485,-23.119003 v -0.0026 c -0.01645,-3.006653 -0.619226,-5.981227 -1.774569,-8.757089 z"
-     sodipodi:nodetypes="sccsscs" />
+     d="m 30.038472,11.559501 a 23.118814,23.118814 0 0 0 -3.15743,11.561052 23.118814,23.118814 0 0 0 23.119519,23.117452 23.118814,23.118814 0 0 0 23.118485,-23.119003 v -0.0026 a 23.118814,23.118814 0 0 0 -3.15743,-11.556918 z" />
   <path
      id="rect3"
      style="fill:#180918;fill-rule:evenodd;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
@@ -89,9 +89,9 @@
      sodipodi:nodetypes="ccccc"
      inkscape:label="skirt" />
   <path
-     id="path6"
-     style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
-     d="M 50.057798,0 C 44.084056,0 42.785549,0.9478492 40.183981,2.2153685 -13.419039,28.331486 16.735216,61.610184 14.335451,85.808172 20.943074,78.812141 18.714632,48.121945 28.396711,31.352092 36.894395,16.633671 43.902252,14.359097 62.590089,14.359097 l 8.754388,2.16e-4 C 67.725834,5.0179041 58.298057,0 50.059865,0 Z"
-     inkscape:label="Hair"
-     sodipodi:nodetypes="sscsccss" />
+     id="rect4"
+     style="display:inline;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+     inkscape:label="hair"
+     d="M 49.997977,-1.0031296e-8 C 41.759089,0.02064729 34.153734,4.4243589 30.034337,11.559501 h 0.0041 c -1.348008,2.337107 -2.276521,4.892133 -2.743502,7.54941 3.075422,-5.508269 8.686916,-7.54941 15.005285,-7.54941 h 15.395443 c 6.31837,0 11.929864,2.041141 15.005286,7.54941 -0.466981,-2.657277 -1.395494,-5.212303 -2.743502,-7.54941 h 0.0041 C 65.842219,4.4243589 58.236865,0.02064729 49.997977,-1.0031296e-8 Z"
+     sodipodi:nodetypes="ccccsscccc" />
 </svg>

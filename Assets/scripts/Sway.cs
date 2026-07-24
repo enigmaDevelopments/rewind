@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Sway : MonoBehaviour
 {
@@ -9,7 +8,10 @@ public class Sway : MonoBehaviour
     void Start()
     {
         offset = Random.Range(0f, 100f);
-        GetComponent<SpriteRenderer>().flipX = 0.5f < Random.value;
+        if (0.5f < Random.value)
+            transform.localScale = new Vector3(-1, 1, 1);
+
+
     }
 
     // Update is called once per frame

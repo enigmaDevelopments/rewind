@@ -12,7 +12,9 @@ public class playerMovment : MonoBehaviour
     }
 
     public Rigidbody2D rb;
+    public SpriteRenderer spriterRenderer;
     public PlayerInput input;
+    public Sprite[] sprites;
     [Range(0, 10)]
     public float speed;
     public float startingTime;
