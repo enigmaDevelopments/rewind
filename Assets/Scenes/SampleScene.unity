@@ -1954,7 +1954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
       propertyPath: animationSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
       propertyPath: spriterRenderer
