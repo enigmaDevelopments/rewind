@@ -11,6 +11,7 @@ public class playerMovment : MonoBehaviour
         public float time;
     }
 
+    public Rigidbody2D rb;
     public PlayerInput input;
     [Range(0, 10)]
     public float speed;
@@ -58,12 +59,13 @@ public class playerMovment : MonoBehaviour
             return;
         }
         Vector2 movement = input.actions["Move"].ReadValue<Vector2>();
-        transform.position += (Vector3)movement * speed * Time.deltaTime;
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         Timer.time -= movement.magnitude * Time.deltaTime;
         Locations.Add(
-            new Location { 
-            postiotion = transform.position,
-            time = Timer.time });
+            new Location {
+                postiotion = rb.position,
+                time = Timer.time
+            });
     }
     public void OnRewindPress(InputAction.CallbackContext context)
     {
