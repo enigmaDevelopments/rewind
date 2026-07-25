@@ -36,6 +36,7 @@ public class playerMovment : MonoBehaviour
 
     private void Update()
     {
+        rb.linearVelocity = Vector2.zero;
         #region rewind
         if (rewindTap)
             Timer.time += .01f;

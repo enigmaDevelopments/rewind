@@ -12,6 +12,7 @@ public class BolderMove : MonoBehaviour
         float distence = velocity * Timer.fixedDeltaTime;
         rb.MovePosition(rb.position + Vector2.right * distence);
         bolder.Rotate(0, 0, distence * -360 / Mathf.PI);
+        rb.linearVelocity = Vector2.zero;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
