@@ -5,6 +5,7 @@ public class BolderMove : MonoBehaviour
     public Transform bolder;
     public Rigidbody2D rb;
     public float velocity;
+    private float distanceMoved;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -13,11 +14,13 @@ public class BolderMove : MonoBehaviour
         rb.MovePosition(rb.position + Vector2.right * distence);
         bolder.Rotate(0, 0, distence * -360 / Mathf.PI);
         rb.linearVelocity = Vector2.zero;
+        distanceMoved += distence;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6 || distanceMoved < .125)
             return;
         velocity *= -1;
+        distanceMoved = 0;
     }
 }
