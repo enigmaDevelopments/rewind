@@ -49,8 +49,7 @@ MonoBehaviour:
   gate: {fileID: 99345507227661657}
   closingTime: 0.75
   open: {x: 0, y: 0, z: -0.70710677, w: 0.70710677}
-  on: 0
-  lerp: 0
+  button: {fileID: 0}
 --- !u!1001 &6392952395393772623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60,8 +59,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 9057690280650639167}
     m_Modifications:
     - target: {fileID: -7871556540511652807, guid: 19cb7a4e971d69448b2881ff998edbf0, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 19cb7a4e971d69448b2881ff998edbf0, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 19cb7a4e971d69448b2881ff998edbf0, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1795851041
       objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: 19cb7a4e971d69448b2881ff998edbf0, type: 3}
       propertyPath: m_Name
@@ -125,6 +132,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9057690280650639167}
     m_Modifications:
+    - target: {fileID: -7871556540511652807, guid: b890fa0a31ed38a4c8d969fe59ae0e52, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: b890fa0a31ed38a4c8d969fe59ae0e52, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1795851041
+      objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: b890fa0a31ed38a4c8d969fe59ae0e52, type: 3}
       propertyPath: m_Name
       value: gate

@@ -9,14 +9,21 @@ public class playerMovment : MonoBehaviour
     {
         public Vector2 postiotion;
         public float time;
+        public float leftLeg;
+        public float rightLeg;
         public Sprite sprite;
-        public bool flip;
     }
 
     public Rigidbody2D rb;
     public SpriteRenderer spriterRenderer;
     public PlayerInput input;
     public Sprite[] sprites;
+    public Transform leftLeg;
+    public Transform rightLeg;
+    public AnimationCurve legAnimation;
+    public float legOffset;
+    public float legSepeation;
+    public float strideHeight;
     [Range(0, 10)]
     public float speed;
     public float startingTime;
@@ -24,7 +31,7 @@ public class playerMovment : MonoBehaviour
     private List<Location> Locations = new List<Location>();
     private bool rewindTap;
     private bool rewindHold;
-
+    
 
 
     private void Start()
@@ -52,7 +59,8 @@ public class playerMovment : MonoBehaviour
                     transform.position = Locations[i].postiotion;
                     Timer.time = Locations[i].time;
                     spriterRenderer.sprite = Locations[i].sprite;
-                    spriterRenderer.flipX = Locations[i].flip;
+                    leftLeg.localPosition = new Vector3(-legSepeation, Locations[i].leftLeg, 0);
+                    rightLeg.localPosition = new Vector3(legSepeation, Locations[i].rightLeg, 0);
                     while (i < Locations.Count)
                         Locations.RemoveAt(Locations.Count - 1);
                     break;
@@ -73,52 +81,38 @@ public class playerMovment : MonoBehaviour
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
         Timer.time -= movement.magnitude * Time.deltaTime;
         #region animation
-       
-        int footState = Mathf.FloorToInt((startingTime - Timer.time) * animationSpeed) % 4;
+
+        float leftOffset = 0;
+        float rightOffset = 0.5f;
         if (Mathf.Abs(movement.y) < Mathf.Abs(movement.x))
         {
-            spriterRenderer.sprite = sprites[0];
             if (movement.x < 0)
-            {
-                spriterRenderer.flipX = true;
-                if (footState == 1)
-                    spriterRenderer.sprite = sprites[1];
-                else if (footState == 3)
-                    spriterRenderer.sprite = sprites[2];
-            }
+                spriterRenderer.sprite = sprites[3];
+
             else
             {
-                spriterRenderer.flipX = false;
-                if (footState == 1)
-                    spriterRenderer.sprite = sprites[2];
-                else if (footState == 3)
-                    spriterRenderer.sprite = sprites[1];
+                spriterRenderer.sprite = sprites[1];
+                leftOffset = .5f;
+                rightOffset = 0;
             }
         }
         else
         {
             if (movement.y < 0)
             {
-                if (footState == 0 || footState == 2)
-                    spriterRenderer.sprite = sprites[5];
-                else
-                {
-                    spriterRenderer.sprite = sprites[6];
-                    spriterRenderer.flipX = footState == 1;
-                }
+                spriterRenderer.sprite = sprites[2];
+                leftOffset = .5f;
+                rightOffset = 0;
             }
             else
-            {
-                if (footState == 0 || footState == 2)
-                    spriterRenderer.sprite = sprites[3];
-                else
-                {
-                    spriterRenderer.sprite = sprites[4];
-                    spriterRenderer.flipX = footState == 3;
-                }
-            }
+                spriterRenderer.sprite = sprites[0];
         }
-        
+
+        float leftLegPosition = legOffset + legAnimation.Evaluate((startingTime - Timer.time)  * animationSpeed + leftOffset) * strideHeight;
+        float rightLegPosition = legOffset + legAnimation.Evaluate((startingTime - Timer.time)  * animationSpeed + rightOffset) * strideHeight;
+        leftLeg.localPosition = new Vector3(-legSepeation, leftLegPosition, 0);
+        rightLeg.localPosition = new Vector3(legSepeation, rightLegPosition, 0);
+
         #endregion
         #region state list
         Locations.Add(
@@ -127,7 +121,8 @@ public class playerMovment : MonoBehaviour
                 postiotion = rb.position,
                 time = Timer.time,
                 sprite = spriterRenderer.sprite,
-                flip = spriterRenderer.flipX
+                leftLeg = leftLegPosition,
+                rightLeg = rightLegPosition
 
             });
         #endregion

@@ -41,11 +41,14 @@ TagManager:
   - name: grass
     uniqueID: 4181182653
     locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: wall
     uniqueID: 2499116255
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: player
+    uniqueID: 3567112739
     locked: 0
   - name: timer
     uniqueID: 3980307209

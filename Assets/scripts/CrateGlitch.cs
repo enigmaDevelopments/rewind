@@ -28,6 +28,8 @@ public class CrateGlitch : MonoBehaviour
             cooldownTimer -= Time.fixedDeltaTime;
             return;
         }
+        if (0 <= Timer.fixedDeltaTime && !isGlitched)
+            return;
         if (isGlitched)
         {
 
