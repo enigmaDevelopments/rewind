@@ -15,8 +15,9 @@ public class playerMovment : MonoBehaviour
     }
 
     public Rigidbody2D rb;
-    public SpriteRenderer spriterRenderer;
+    public SpriteRenderer spriteRenderer;
     public PlayerInput input;
+    public KillPlayer deathManager;
     public Sprite[] sprites;
     public Color sockColor;
     public Color powerSockColor;
@@ -64,7 +65,7 @@ public class playerMovment : MonoBehaviour
                 {
                     transform.position = Locations[i].postiotion;
                     Timer.time = Locations[i].time;
-                    spriterRenderer.sprite = Locations[i].sprite;
+                    spriteRenderer.sprite = Locations[i].sprite;
                     leftLeg.localPosition = new Vector3(-legSepeation, Locations[i].leftLeg, 0);
                     rightLeg.localPosition = new Vector3(legSepeation, Locations[i].rightLeg, 0);
                     while (i < Locations.Count)
@@ -78,17 +79,21 @@ public class playerMovment : MonoBehaviour
         }
         else if (wasRewinding)
         {
+            deathManager.dontKill = false;
             wasRewinding = false;
             powered = false;
             leftSock.color = sockColor;
             rightSock.color = sockColor;
         }
         #endregion
-        if (Timer.time <= 0)
+        if (Timer.time < 0)
         {
             Timer.time = 0;
+            deathManager.Kill();
             return;
         }
+        if (deathManager.dead)
+            return;
         Vector2 movement = input.actions["Move"].ReadValue<Vector2>();
         if (movement == Vector2.zero)
             return;
@@ -101,11 +106,11 @@ public class playerMovment : MonoBehaviour
         if (Mathf.Abs(movement.y) < Mathf.Abs(movement.x))
         {
             if (movement.x < 0)
-                spriterRenderer.sprite = sprites[3];
+                spriteRenderer.sprite = sprites[3];
 
             else
             {
-                spriterRenderer.sprite = sprites[1];
+                spriteRenderer.sprite = sprites[1];
                 leftOffset = .5f;
                 rightOffset = 0;
             }
@@ -114,12 +119,12 @@ public class playerMovment : MonoBehaviour
         {
             if (movement.y < 0)
             {
-                spriterRenderer.sprite = sprites[2];
+                spriteRenderer.sprite = sprites[2];
                 leftOffset = .5f;
                 rightOffset = 0;
             }
             else
-                spriterRenderer.sprite = sprites[0];
+                spriteRenderer.sprite = sprites[0];
         }
 
         float leftLegPosition = legOffset + legAnimation.Evaluate((startingTime - Timer.time)  * animationSpeed + leftOffset) * strideHeight;
@@ -134,7 +139,7 @@ public class playerMovment : MonoBehaviour
             {
                 postiotion = rb.position,
                 time = Timer.time,
-                sprite = spriterRenderer.sprite,
+                sprite = spriteRenderer.sprite,
                 leftLeg = leftLegPosition,
                 rightLeg = rightLegPosition
 
@@ -145,6 +150,13 @@ public class playerMovment : MonoBehaviour
     {
         rewindTap = context.interaction is TapInteraction;
         rewindHold = context.interaction is HoldInteraction;
+        deathManager.dead = false;
+        deathManager.dontKill = true;
+        deathManager.collider2d.enabled = true;
+        deathManager.particle.Stop();
+        spriteRenderer.enabled = true;
+        leftSock.enabled = true;
+        rightSock.enabled = true;
     }
     public void OnRewindRelease(InputAction.CallbackContext context)
     {
