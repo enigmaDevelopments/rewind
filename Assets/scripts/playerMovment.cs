@@ -42,7 +42,7 @@ public class playerMovment : MonoBehaviour
     private bool rewindHold;
     private bool powered;
     private bool wasRewinding;
-    private Location[] orignalLocations;
+    private List<Location> orignalLocations;
 
 
 
@@ -88,8 +88,10 @@ public class playerMovment : MonoBehaviour
             wasRewinding = false;
             if (powered == true)
             {
+                for (int i = 1; i < Locations.Count; i++)
+                    orignalLocations.RemoveAt(0);
                 GameObject cloneInstance = Instantiate(clone, transform.position, Quaternion.identity);
-                cloneInstance.GetComponent<CloneControler>().locations = orignalLocations;
+                cloneInstance.GetComponent<CloneControler>().locations = orignalLocations.ToArray();
 
                 powered = false;
                 leftSock.color = sockColor;
@@ -174,7 +176,8 @@ public class playerMovment : MonoBehaviour
         spriteRenderer.enabled = true;
         leftSock.enabled = true;
         rightSock.enabled = true;
-        orignalLocations = Locations.ToArray();
+        orignalLocations = new List<Location>(Locations);
+
     }
     public void OnRewindRelease(InputAction.CallbackContext context)
     {
