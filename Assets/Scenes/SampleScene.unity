@@ -1279,11 +1279,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2017469635642396641, guid: ae81d6c4cf36d5545bf39809e4dd2094, type: 3}
   m_PrefabInstance: {fileID: 100890215}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &1155550904 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6508768858696446864, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-  m_PrefabInstance: {fileID: 5296615406126211361}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1211725265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2017469635642396641, guid: ae81d6c4cf36d5545bf39809e4dd2094, type: 3}
@@ -1303,11 +1298,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2017469635642396641, guid: ae81d6c4cf36d5545bf39809e4dd2094, type: 3}
   m_PrefabInstance: {fileID: 122947192}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1532130767 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 9057673568386016851, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-  m_PrefabInstance: {fileID: 5296615406126211361}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1647038920
 GameObject:
@@ -1415,44 +1405,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae81d6c4cf36d5545bf39809e4dd2094, type: 3}
---- !u!1 &1718896966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1412324860884615026, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-  m_PrefabInstance: {fileID: 5296615406126211361}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1718896976 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6568799552711161115, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-  m_PrefabInstance: {fileID: 5296615406126211361}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1718896980 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5557348287016251382, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-  m_PrefabInstance: {fileID: 5296615406126211361}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1718896981 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 82944838056954565, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-  m_PrefabInstance: {fileID: 5296615406126211361}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1718896982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718896966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69d2d78f872736a408e80a1fd536fd3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KillPlayer
-  spriteRenderer: {fileID: 1718896976}
-  collider2d: {fileID: 1718896981}
-  particle: {fileID: 1718896980}
-  leftLeg: {fileID: 1532130767}
-  rightLeg: {fileID: 1155550904}
-  dead: 0
 --- !u!1 &1753347068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,10 +2079,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: bolder
       objectReference: {fileID: 0}
-    - target: {fileID: 5895398414839529532, guid: caa9e0093453d7e44a25d40d150d32e3, type: 3}
-      propertyPath: m_ContactCaptureLayers.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2245,85 +2193,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6508768858696446864, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: m_Color.b
-      value: 0.45882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508768858696446864, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: m_Color.g
-      value: 0.52156866
-      objectReference: {fileID: 0}
-    - target: {fileID: 6508768858696446864, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: m_Color.r
-      value: 0.6156863
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: leftSock
-      value: 
-      objectReference: {fileID: 1532130767}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: rightSock
-      value: 
-      objectReference: {fileID: 1155550904}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: sockColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: sockColor.b
-      value: 0.45882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: sockColor.g
-      value: 0.52156866
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: sockColor.r
-      value: 0.6156863
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: deathManager
-      value: 
-      objectReference: {fileID: 1718896982}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 1718896976}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: powerSockColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: powerSockColor.b
-      value: 0.72156864
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: powerSockColor.g
-      value: 0.6627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 8484464470311719930, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: powerSockColor.r
-      value: 0.9607843
-      objectReference: {fileID: 0}
-    - target: {fileID: 9057673568386016851, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: m_Color.b
-      value: 0.45882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 9057673568386016851, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: m_Color.g
-      value: 0.52156866
-      objectReference: {fileID: 0}
-    - target: {fileID: 9057673568386016851, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      propertyPath: m_Color.r
-      value: 0.6156863
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1412324860884615026, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1718896982}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dbce19fcdfee3849a923e349e39b3f1, type: 3}
 --- !u!1001 &6618380206513844806
 PrefabInstance:

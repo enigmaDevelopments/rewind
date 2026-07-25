@@ -23,6 +23,15 @@
                     "processors": "",
                     "interactions": "Tap,Hold",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Fast Forward",
+                    "type": "Button",
+                    "id": "7498dc97-df10-41a7-8864-68ccd2b7f401",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -166,6 +175,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Rewind",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd61021c-70ce-4da5-9668-ca1f1a247126",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Fast Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19c21dac-e5fc-4081-8de0-7e06a40be3ec",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Fast Forward",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -34,6 +34,7 @@ public class playerMovment : MonoBehaviour
     public float startingTime;
     public float animationSpeed;
     private List<Location> Locations = new List<Location>();
+    private Vector2 lastDirection = Vector2.right;
     private bool rewindTap;
     private bool rewindHold;
     private bool powered;
@@ -95,13 +96,19 @@ public class playerMovment : MonoBehaviour
         if (deathManager.dead)
             return;
         Vector2 movement = input.actions["Move"].ReadValue<Vector2>();
-        if (movement == Vector2.zero)
+        bool walkInPlace = input.actions["Fast Forward"].IsPressed();
+        if (movement == Vector2.zero && !walkInPlace)
             return;
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
-        Timer.time -= movement.magnitude * Time.deltaTime;
+        Timer.time -= (walkInPlace? 1 : movement.magnitude) * Time.deltaTime;
         #region animation
 
-        float leftOffset = 0;
+        if (movement == Vector2.zero)
+            movement = lastDirection;
+        else
+            lastDirection = movement;
+
+            float leftOffset = 0;
         float rightOffset = 0.5f;
         if (Mathf.Abs(movement.y) < Mathf.Abs(movement.x))
         {

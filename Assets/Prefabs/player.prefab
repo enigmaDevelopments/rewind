@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3286163911610860551, guid: 2fd29556e6c12a942b9dedc9bc5c486e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6156863, g: 0.52156866, b: 0.45882353, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -173,7 +173,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3286163911610860551, guid: 2fd29556e6c12a942b9dedc9bc5c486e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6156863, g: 0.52156866, b: 0.45882353, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 82944838056954565}
   - component: {fileID: 7015170525949813200}
   - component: {fileID: 8484464470311719930}
+  - component: {fileID: 2525759756111679958}
   - component: {fileID: 5557348287016251382}
   - component: {fileID: 4910950411216130680}
   m_Layer: 6
@@ -397,19 +398,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerMovment
   rb: {fileID: 7515559452622979598}
-  spriterRenderer: {fileID: 6568799552711161115}
+  spriteRenderer: {fileID: 6568799552711161115}
   input: {fileID: 7015170525949813200}
+  deathManager: {fileID: 2525759756111679958}
   sprites:
   - {fileID: 3286163911610860551, guid: 73ece725585391c42b52af01ca568e4b, type: 3}
   - {fileID: 3286163911610860551, guid: 008a843177889364da664c160d458dc0, type: 3}
   - {fileID: 3286163911610860551, guid: 749570845975dce4cafff9167b534330, type: 3}
   - {fileID: 3286163911610860551, guid: 4d59eda56d6d9a74a8602510daddd268, type: 3}
-  sockColor: {r: 0, g: 0, b: 0, a: 0}
-  powerSockColor: {r: 0, g: 0, b: 0, a: 0}
+  sockColor: {r: 0.6156863, g: 0.52156866, b: 0.45882353, a: 1}
+  powerSockColor: {r: 0.9607843, g: 0.6627451, b: 0.72156864, a: 1}
   leftLeg: {fileID: 476455047755037870}
   rightLeg: {fileID: 1223086402129633192}
-  leftSock: {fileID: 0}
-  rightSock: {fileID: 0}
+  leftSock: {fileID: 9057673568386016851}
+  rightSock: {fileID: 6508768858696446864}
   legAnimation:
     serializedVersion: 2
     m_Curve:
@@ -467,6 +469,25 @@ MonoBehaviour:
   speed: 5.4
   startingTime: 5
   animationSpeed: 2
+--- !u!114 &2525759756111679958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412324860884615026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d2d78f872736a408e80a1fd536fd3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillPlayer
+  spriteRenderer: {fileID: 6568799552711161115}
+  collider2d: {fileID: 82944838056954565}
+  particle: {fileID: 5557348287016251382}
+  leftLeg: {fileID: 9057673568386016851}
+  rightLeg: {fileID: 6508768858696446864}
+  dead: 0
+  dontKill: 0
 --- !u!198 &5557348287016251382
 ParticleSystem:
   m_ObjectHideFlags: 0
