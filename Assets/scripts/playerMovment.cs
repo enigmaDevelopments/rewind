@@ -18,8 +18,12 @@ public class playerMovment : MonoBehaviour
     public SpriteRenderer spriterRenderer;
     public PlayerInput input;
     public Sprite[] sprites;
+    public Color sockColor;
+    public Color powerSockColor;
     public Transform leftLeg;
     public Transform rightLeg;
+    public SpriteRenderer leftSock;
+    public SpriteRenderer rightSock;
     public AnimationCurve legAnimation;
     public float legOffset;
     public float legSepeation;
@@ -31,7 +35,9 @@ public class playerMovment : MonoBehaviour
     private List<Location> Locations = new List<Location>();
     private bool rewindTap;
     private bool rewindHold;
-    
+    private bool powered;
+    private bool wasRewinding;
+
 
 
     private void Start()
@@ -66,8 +72,16 @@ public class playerMovment : MonoBehaviour
                     break;
                 }
             }
+            wasRewinding = true;
             rewindTap = false;
             return;
+        }
+        else if (wasRewinding)
+        {
+            wasRewinding = false;
+            powered = false;
+            leftSock.color = sockColor;
+            rightSock.color = sockColor;
         }
         #endregion
         if (Timer.time <= 0)
@@ -136,6 +150,11 @@ public class playerMovment : MonoBehaviour
     {
         rewindHold = false;
     }
-
+    public void powerUp()
+    {
+        powered = true;
+        leftSock.color = powerSockColor;
+        rightSock.color = powerSockColor;
+    }
 
 }

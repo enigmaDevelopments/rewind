@@ -404,8 +404,12 @@ MonoBehaviour:
   - {fileID: 3286163911610860551, guid: 008a843177889364da664c160d458dc0, type: 3}
   - {fileID: 3286163911610860551, guid: 749570845975dce4cafff9167b534330, type: 3}
   - {fileID: 3286163911610860551, guid: 4d59eda56d6d9a74a8602510daddd268, type: 3}
+  sockColor: {r: 0, g: 0, b: 0, a: 0}
+  powerSockColor: {r: 0, g: 0, b: 0, a: 0}
   leftLeg: {fileID: 476455047755037870}
   rightLeg: {fileID: 1223086402129633192}
+  leftSock: {fileID: 0}
+  rightSock: {fileID: 0}
   legAnimation:
     serializedVersion: 2
     m_Curve:

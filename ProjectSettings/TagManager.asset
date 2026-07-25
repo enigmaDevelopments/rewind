@@ -13,7 +13,7 @@ TagManager:
   - UI
   - player
   - bolder
-  - 
+  - birth
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 3567112739
+    locked: 0
+  - name: orb
+    uniqueID: 2685397273
     locked: 0
   - name: timer
     uniqueID: 3980307209

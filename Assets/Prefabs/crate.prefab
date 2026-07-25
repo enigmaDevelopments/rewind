@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7871556540511652807, guid: 133030fdae74ee443901bf6666c0975d, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: 133030fdae74ee443901bf6666c0975d, type: 3}
       propertyPath: m_Name
       value: crate
