@@ -7,7 +7,7 @@ public class ButtonState : MonoBehaviour
     public Sprite OffSprite;
     public bool on;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         spriteRenderer.sprite = OnSprite;
         on = true;

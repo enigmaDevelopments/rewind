@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5895398414839529532}
   - component: {fileID: 3897721139175938752}
   - component: {fileID: 5391939932483966219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,10 +56,10 @@ CircleCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -130,6 +130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bolder-reflection
       objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 2c575808aa888f041afadb2693926550, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 2c575808aa888f041afadb2693926550, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -191,6 +195,10 @@ PrefabInstance:
     - target: {fileID: -3888481672020999207, guid: 0e0a0a7c288f5a341a71ffff6ca5447a, type: 3}
       propertyPath: m_Name
       value: bolder
+      objectReference: {fileID: 0}
+    - target: {fileID: -3888481672020999207, guid: 0e0a0a7c288f5a341a71ffff6ca5447a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8742538545776668643, guid: 0e0a0a7c288f5a341a71ffff6ca5447a, type: 3}
       propertyPath: m_LocalPosition.x
