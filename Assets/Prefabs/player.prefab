@@ -401,6 +401,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6568799552711161115}
   input: {fileID: 7015170525949813200}
   deathManager: {fileID: 2525759756111679958}
+  clone: {fileID: 3460733624140884876, guid: 0831c1326d313014293c16be67cebb96, type: 3}
   sprites:
   - {fileID: 3286163911610860551, guid: 73ece725585391c42b52af01ca568e4b, type: 3}
   - {fileID: 3286163911610860551, guid: 008a843177889364da664c160d458dc0, type: 3}

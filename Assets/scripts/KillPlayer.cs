@@ -10,13 +10,13 @@ public class KillPlayer : MonoBehaviour
     public bool dead;
     public bool dontKill;
 
-    void OnCollisionStay2D(Collision2D collision)
+    protected virtual void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.layer != 7)
             return;
         Kill();
     }
-    public void Kill()
+    public virtual void Kill()
     {
         if (dontKill)
             return;

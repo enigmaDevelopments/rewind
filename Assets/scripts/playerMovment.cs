@@ -3,21 +3,24 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 
+public struct Location
+{
+    public Vector2 postiotion;
+    public float time;
+    public float leftLeg;
+    public float rightLeg;
+    public Sprite sprite;
+}
+
 public class playerMovment : MonoBehaviour
 {
-    private struct Location
-    {
-        public Vector2 postiotion;
-        public float time;
-        public float leftLeg;
-        public float rightLeg;
-        public Sprite sprite;
-    }
+    
 
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
     public PlayerInput input;
     public KillPlayer deathManager;
+    public GameObject clone;
     public Sprite[] sprites;
     public Color sockColor;
     public Color powerSockColor;
@@ -39,6 +42,7 @@ public class playerMovment : MonoBehaviour
     private bool rewindHold;
     private bool powered;
     private bool wasRewinding;
+    private Location[] orignalLocations;
 
 
 
@@ -82,9 +86,15 @@ public class playerMovment : MonoBehaviour
         {
             deathManager.dontKill = false;
             wasRewinding = false;
-            powered = false;
-            leftSock.color = sockColor;
-            rightSock.color = sockColor;
+            if (powered == true)
+            {
+                GameObject cloneInstance = Instantiate(clone, transform.position, Quaternion.identity);
+                cloneInstance.GetComponent<CloneControler>().locations = orignalLocations;
+
+                powered = false;
+                leftSock.color = sockColor;
+                rightSock.color = sockColor;
+            }
         }
         #endregion
         if (Timer.time < 0)
@@ -164,6 +174,7 @@ public class playerMovment : MonoBehaviour
         spriteRenderer.enabled = true;
         leftSock.enabled = true;
         rightSock.enabled = true;
+        orignalLocations = Locations.ToArray();
     }
     public void OnRewindRelease(InputAction.CallbackContext context)
     {
