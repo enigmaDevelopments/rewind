@@ -60,8 +60,16 @@ public class playerMovment : MonoBehaviour
     private void Start()
     {
         Timer.time = startingTime;
+    }
+    private void OnEnable()
+    {
         input.actions["Rewind"].performed += OnRewindPress;
         input.actions["Rewind"].canceled += OnRewindRelease;
+    }
+    private void OnDisable()
+    {
+        input.actions["Rewind"].performed -= OnRewindPress;
+        input.actions["Rewind"].canceled -= OnRewindRelease;
     }
 
     private void Update()
