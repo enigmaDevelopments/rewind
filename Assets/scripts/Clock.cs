@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Clock : MonoBehaviour
 {
@@ -19,5 +20,9 @@ public class Clock : MonoBehaviour
         color.a = Mathf.PerlinNoise(m, s) * .75f + .25f;
         secondSprite.color = color;
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
