@@ -105,13 +105,13 @@ public class playerMovment : MonoBehaviour
         {
             deathManager.dontKill = false;
             wasRewinding = false;
+            rb.simulated = true;
             if (powered == true)
             {
                 for (int i = 1; i < Locations.Count; i++)
                     orignalLocations.RemoveAt(0);
                 GameObject cloneInstance = Instantiate(clone, transform.position, Quaternion.identity);
                 cloneInstance.GetComponent<CloneControler>().locations = orignalLocations.ToArray();
-
                 Powered = false;
             }
         }
@@ -194,7 +194,7 @@ public class playerMovment : MonoBehaviour
         leftSock.enabled = true;
         rightSock.enabled = true;
         orignalLocations = new List<Location>(Locations);
-
+        rb.simulated = false;
     }
     public void OnRewindRelease(InputAction.CallbackContext context)
     {

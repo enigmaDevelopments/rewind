@@ -38,7 +38,6 @@ public class Timer : MonoBehaviour
         currentFixedTime = -1;
     }
 
-    // Update is called once per frame
     void Update()
     {
         lastFrame = currentTime;
