@@ -10,6 +10,7 @@ public class OpenGate : MonoBehaviour
     }
     public Transform gate;
     public float closingTime;
+    public Quaternion close = Quaternion.Euler(0, 0, 0);
     public Quaternion open = Quaternion.Euler(0, 0, -90);
     public ButtonState button;
     private List<Position> positions = new List<Position>();
@@ -42,6 +43,6 @@ public class OpenGate : MonoBehaviour
                 time = Timer.time
             });
         }
-        gate.rotation = Quaternion.Slerp(Quaternion.identity, open, lerp);
+        gate.rotation = Quaternion.Slerp(close, open, lerp);
     }
 }
