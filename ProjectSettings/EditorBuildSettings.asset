@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/bolder-gate.unity
     guid: 3862e5a754773c448972a09c94bf96e0
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: a0d5da39b3f8cd649b5c3d5c04457335
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
