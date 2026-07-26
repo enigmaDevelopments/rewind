@@ -255,6 +255,7 @@ MonoBehaviour:
   rightLeg: {fileID: 8776567712503162734}
   dead: 0
   dontKill: 0
+  rigidBody: {fileID: 527881377296819858}
 --- !u!114 &4579662144821233602
 MonoBehaviour:
   m_ObjectHideFlags: 0

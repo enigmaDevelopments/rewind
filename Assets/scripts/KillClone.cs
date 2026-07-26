@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class KillClone : KillPlayer
 {
+    public Transform rigidBody;
     protected override void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 11 && -.25f < collision.GetContact(0).separation)
-            return;
-        Kill();
+        return;
+    }
+    void FixedUpdate()
+    {
+        if (.25 < Vector2.Distance(transform.position, rigidBody.position))
+            Kill();
     }
     public override void Kill()
     {
