@@ -17,6 +17,6 @@ public class FinalTimes : MonoBehaviour
     {
         float s = time % 60;
         float m = time / 60;
-        return $"{m.ToString("F0")}:{m.ToString("00.####")}";
+        return $"{m.ToString("F0")}:{s.ToString("00.####")}";
     }
 }

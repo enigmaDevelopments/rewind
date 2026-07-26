@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour
         timerText.text = time.ToString("F4");
         realTime += deltaTime;
         relitivisticTime += Mathf.Abs(deltaTime);
-        outOfGameTime += deltaTime;
+        outOfGameTime += Time.deltaTime;
     }
     private void FixedUpdate()
     {
