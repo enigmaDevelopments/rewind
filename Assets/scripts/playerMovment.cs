@@ -45,6 +45,16 @@ public class playerMovment : MonoBehaviour
     private bool wasRewinding;
     private List<Location> orignalLocations;
 
+    public bool Powered
+    {
+        get { return powered; }
+        set 
+        { 
+            powered = value;
+            rightSock.color = leftSock.color = powered ? powerSockColor : sockColor;
+        }
+    }
+
 
 
     private void Start()
@@ -94,9 +104,7 @@ public class playerMovment : MonoBehaviour
                 GameObject cloneInstance = Instantiate(clone, transform.position, Quaternion.identity);
                 cloneInstance.GetComponent<CloneControler>().locations = orignalLocations.ToArray();
 
-                powered = false;
-                leftSock.color = sockColor;
-                rightSock.color = sockColor;
+                Powered = false;
             }
         }
         #endregion
@@ -183,12 +191,6 @@ public class playerMovment : MonoBehaviour
     public void OnRewindRelease(InputAction.CallbackContext context)
     {
         rewindHold = false;
-    }
-    public void powerUp()
-    {
-        powered = true;
-        leftSock.color = powerSockColor;
-        rightSock.color = powerSockColor;
     }
     public void OnReset(InputValue value)
     {

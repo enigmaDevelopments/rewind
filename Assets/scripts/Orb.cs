@@ -7,8 +7,11 @@ public class Orb : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        playerMovment player = collision.gameObject.GetComponent<playerMovment>();
+        if (player.Powered)
+            return;
         spriteRenderer.enabled = false;
         collider2d.enabled = false;
-        collision.gameObject.GetComponent<playerMovment>().powerUp();
+        player.Powered = true;
     }
 }
