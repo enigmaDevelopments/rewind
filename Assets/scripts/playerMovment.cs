@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using UnityEngine.SceneManagement;
 
 public struct Location
 {
@@ -188,6 +189,11 @@ public class playerMovment : MonoBehaviour
         powered = true;
         leftSock.color = powerSockColor;
         rightSock.color = powerSockColor;
+    }
+    public void OnReset(InputValue value)
+    {
+        if (value.isPressed)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }

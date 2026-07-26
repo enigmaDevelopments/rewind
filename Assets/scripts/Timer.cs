@@ -11,8 +11,8 @@ public class Timer : MonoBehaviour
     public static float realTime = 0;
     public static float relitivisticTime = 0;
     public static float outOfGameTime = 0;
-    private static float lastFixedTime = -1;
-    private static float currentFixedTime = -1;
+    private static float lastFixedTime;
+    private static float currentFixedTime;
     
     public static float deltaTime
     {
@@ -32,6 +32,11 @@ public class Timer : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        lastFixedTime = -1;
+        currentFixedTime = -1;
+    }
 
     // Update is called once per frame
     void Update()
