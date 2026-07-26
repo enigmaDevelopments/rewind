@@ -36,6 +36,8 @@ public class Timer : MonoBehaviour
     {
         lastFixedTime = -1;
         currentFixedTime = -1;
+        lastFrame = -1;
+        currentTime = -1;
     }
 
     void Update()
