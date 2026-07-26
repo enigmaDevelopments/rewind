@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CloneControler : MonoBehaviour
 {
+    public Rigidbody2D rb;
     public SpriteRenderer SpriteRenderer;
     public Transform leftLeg;
     public Transform rightLeg;
@@ -9,7 +10,7 @@ public class CloneControler : MonoBehaviour
     public Location[] locations;
     private int lastIndex;
 
-    private void Update()
+    private void FixedUpdate()
     {
         int i = lastIndex;
         for (; i < locations.Length - 1; i++)
@@ -20,6 +21,7 @@ public class CloneControler : MonoBehaviour
                 break;
         lastIndex = i;
 
+        rb.MovePosition(locations[lastIndex].postiotion);
         transform.position = locations[lastIndex].postiotion;
         SpriteRenderer.sprite = locations[lastIndex].sprite;
         leftLeg.localPosition = new Vector3(-legSepeation, locations[lastIndex].leftLeg, 0);
